@@ -14,7 +14,12 @@ const config: Config = {
         lightTeal: '#629584', // Use this for lighter elements
         lightGreen: '#E2F1E7', // Background 
       },
+      fontFamily:{
+        dmsans:["DM Sans", "sans-serif"],
+        
+      },
     },
+   
   },
   plugins: [],
 };

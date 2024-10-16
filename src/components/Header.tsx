@@ -1,8 +1,8 @@
 "use-client";
 
 import { FC, useState } from "react";
-import Image from "next/image"; 
-import logo from '../assets/logo_xorunika.png'; 
+// import Image from "next/image"; 
+
 
 // Declare specific type of props that must be passed
 interface HeaderProps {
@@ -36,27 +36,27 @@ const Header: FC<HeaderProps> = ({ bgColor, menus = katalogMenus }) => {
 
   return (
     <nav className={`flex justify-between items-center h-16 p-4 lg:px-8 ${bgColor}`}>
-      {/* Left Menu (Logo) */}
+  
       <div className="flex items-center">
         <a href="/" className="ml-20">
-          {/* Set the max height for the logo to fit the navbar */}
-          <Image 
-            src={logo} 
+       
+          {/* <Image 
+            src=
             alt="Logo" 
-            width={75} // Adjust width as needed for your logo's design
-            height={75} // Adjust height if you want to constrain the height to square
-            className="max-h-full object-contain" // Fit the logo within the navbar while maintaining aspect ratio
-          />
+            width={75} 
+            height={50} 
+         
+          /> */}
         </a>
       </div>
 
-      {/* Right Menu */}
+    
       <div className="hidden lg:flex lg:gap-x-10 mr-20">
         {menus.map((menu, index) => (
           <a
             key={index}
             href={menu.path_menu}
-            className="text-md text-lightGreen hover:font-bold"
+            className="text-md ubuntu-reguler text-lightGreen hover:font-bold"
           >
             {menu.name_menu}
           </a>
