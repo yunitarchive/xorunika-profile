@@ -11,7 +11,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ header, imgSrc, description, label }) => {
   return (
     <div className="flex flex-row rounded-lg shadow-lg overflow-hidden bg-gray-100">
-      {/* Image Section */}
+
       <div className="relative w-2/5">
         <Image 
           src={imgSrc} 
@@ -20,7 +20,7 @@ const Card: React.FC<CardProps> = ({ header, imgSrc, description, label }) => {
           objectFit="cover" 
           className="absolute inset-0"
         />
-        {/* Overlay and Text */}
+    
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent px-4 py-2">
           <span className="text-white text-sm">{label}</span>   
         </div>

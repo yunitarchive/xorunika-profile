@@ -57,7 +57,6 @@ const Header: FC<HeaderProps> = ({ bgColor, menus = katalogMenus }) => {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
         <button 
           onClick={toggleMobileMenu} 
           className="lg:hidden mr-4 p-2 rounded-md hover:bg-gray-100"
@@ -71,7 +70,6 @@ const Header: FC<HeaderProps> = ({ bgColor, menus = katalogMenus }) => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="lg:hidden absolute top-16 left-0 right-0 bg-primary shadow-lg z-50">
           <div className="flex flex-col py-2">

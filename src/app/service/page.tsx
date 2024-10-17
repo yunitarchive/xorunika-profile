@@ -7,7 +7,6 @@ import Card from'@/components/Card';
 import { DUMMY_SERVICE } from '../../constants/listService';
 import { DUMMY_TESTIMONILAS } from '../../constants/listTestimonials'; 
 import CardTestimonial from '../../components/CardTestimonial';
-import Footer from '@/components/Footer';
 
 const ServicePage = () => {
   return (
@@ -17,7 +16,7 @@ const ServicePage = () => {
             imgSrc={ServicePhoto.src}
             fromColor="36, 54, 66"  
             toColor="56, 116, 120"   
-            caption="Unlock Solar Savings by Empowering Your Location for a Sustainable Future"
+            caption="Empowering Your Location for a Sustainable Future"
             opacityStart={0.96}   
             opacityEnd={0.70}  
           />
@@ -51,9 +50,7 @@ const ServicePage = () => {
           ))}
         </div>
 </section>
-      <section className="bg-primary relative">
-      <Footer />
-      </section>
+   
 
 
     

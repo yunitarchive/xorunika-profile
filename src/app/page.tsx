@@ -1,20 +1,22 @@
 
 import React from 'react';
-import Footer from '@/components/Footer';
+//import Map from '../components/Map';
+import Banner from '../components/Banner';
+import ServicePhoto from '../../public/banner_service.jpg'
 const HomePage = () => {
   return (
     <div>
-   
-      <section className="p-8 bg-lightGreen">
-        <h1 className="text-2xl text-center text-primary">Welcome to Xorunika</h1>
-        <p className="mt-4 text-center">
-          Your go-to platform for eco-friendly solar panels and more.
-        </p>
+      <section className="bg-primary relative min-h-screen">
+        <Banner 
+          imgSrc={ServicePhoto.src}
+          fromColor="36, 54, 66"  
+          toColor="56, 116, 120"   
+          caption="Unlock Solar Savings ?  Start with Xorunika"
+          opacityStart={0.96}   
+          opacityEnd={0.70}  
+        />
+    
       </section>
-      <section className="bg-primary relative">
-      <Footer />
-      </section>
-  
     </div>
   );
 };
