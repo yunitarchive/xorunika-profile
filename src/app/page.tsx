@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import Footer from '@/components/Footer';
 const HomePage = () => {
   return (
     <div>
@@ -11,7 +11,9 @@ const HomePage = () => {
           Your go-to platform for eco-friendly solar panels and more.
         </p>
       </section>
- 
+      <section className="bg-primary relative">
+      <Footer />
+      </section>
   
     </div>
   );

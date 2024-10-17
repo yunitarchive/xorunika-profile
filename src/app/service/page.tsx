@@ -5,7 +5,8 @@ import ServicePhoto from '../../../public/banner_service.jpg'
 //import CardServices from '@/components/CardServices';
 import Card from'@/components/Card';
 import { DUMMY_SERVICE } from '../../constants/listService';
-//import CardTestimonial from '@/components/CartdTestimonial';
+import { DUMMY_TESTIMONILAS } from '../../constants/listTestimonials'; 
+import CardTestimonial from '../../components/CardTestimonial';
 import Footer from '@/components/Footer';
 
 const ServicePage = () => {
@@ -36,6 +37,20 @@ const ServicePage = () => {
         </div>
        {/* <CardServices/> */}
       </section>
+      <section className="p-8">
+  <h2 className="text-center text-2xl font-bold">What Our Clients Say</h2>
+  <div className="my-12 mx-24 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {DUMMY_TESTIMONILAS.map((testimonial, index) => (
+            <CardTestimonial
+              key={index}
+              name={testimonial.name}
+              userType={testimonial.user_type}
+              occupation={testimonial.ocuppation}
+              description={testimonial.description}
+            />
+          ))}
+        </div>
+</section>
       <section className="bg-primary relative">
       <Footer />
       </section>

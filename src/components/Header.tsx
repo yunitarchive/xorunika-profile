@@ -73,7 +73,7 @@ const Header: FC<HeaderProps> = ({ bgColor, menus = katalogMenus }) => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-16 left-0 right-0 bg-white shadow-lg z-50">
+        <div className="lg:hidden absolute top-16 left-0 right-0 bg-primary shadow-lg z-50">
           <div className="flex flex-col py-2">
             {menus.map((menu, index) => (
               <a
@@ -81,8 +81,8 @@ const Header: FC<HeaderProps> = ({ bgColor, menus = katalogMenus }) => {
                 href={menu.path_menu}
                 className={`px-6 py-3 text-md transition-colors duration-200
                   ${pathname === menu.path_menu 
-                    ? "text-blue-600 font-bold bg-gray-50" 
-                    : "text-lightGreen hover:bg-gray-50"
+                    ? "text-lightTeal font-bold bg-lightGreen" 
+                    : "text-lightGreen hover:text-bold"
                   }`}
                 onClick={() => setMobileMenuOpen(false)}
               >

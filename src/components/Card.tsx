@@ -26,11 +26,11 @@ const Card: React.FC<CardProps> = ({ header, imgSrc, description, label }) => {
         </div>
       </div>
 
-      {/* Text Section */}
+ 
       <div className="flex flex-col w-3/5 p-4 bg-gray-100">
         <h2 className="text-xl font-medium mb-2 text-primary">{header}</h2>
-        <p className="text-gray-700 mb-4">{description}</p>
-        {/* Demo Request Button */}
+        <p className="text-primary  mb-4 text-extra-light">{description}</p>
+     
         <button className="mt-auto w-2/5 bg-lightTeal text-white py-1 px-2 rounded ml-auto">
           Demo Request
         </button>
