@@ -1,7 +1,7 @@
 
 'use client';
 import React, { useEffect, useState } from 'react';
-import Chip from '../../components/Chip';
+import Chip from '@/components/Chip';
 
 interface RandomUser {
   name: {
@@ -29,7 +29,6 @@ const Team: React.FC = () => {
       const data = await response.json();
       const users = data.results as RandomUser[];
 
-     
       setOperationsTeam(users.slice(0, 8));  
       setSalesTeam(users.slice(8, 12));      
       setTechTeam(users.slice(12, 16));      
@@ -40,11 +39,12 @@ const Team: React.FC = () => {
 
   return (
     <div className="min-h-screen mx-auto p-8 bg-lightGreen">
-      <h1 className="text-4xl text-center  font-bold mb-6">Meet Our XorunikAlliance</h1>
+      <h1 className="text-4xl text-center font-bold mb-6">Meet Our XorunikAlliance</h1>
 
       <section className="mb-12">
         <h2 className="text-2xl font-medium mb-4">Operations</h2>
-        <div className="grid grid-cols-4 gap-6">
+     
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {operationsTeam.map((member, index) => (
             <Chip
               key={index}
@@ -57,10 +57,9 @@ const Team: React.FC = () => {
         </div>
       </section>
 
-    
       <section className="mb-12">
         <h2 className="text-2xl font-medium mb-4">Sales</h2>
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {salesTeam.map((member, index) => (
             <Chip
               key={index}
@@ -75,7 +74,7 @@ const Team: React.FC = () => {
 
       <section className="mb-12">
         <h2 className="text-2xl font-medium mb-4">Tech</h2>
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {techTeam.map((member, index) => (
             <Chip
               key={index}
@@ -92,3 +91,4 @@ const Team: React.FC = () => {
 };
 
 export default Team;
+

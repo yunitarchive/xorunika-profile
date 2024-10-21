@@ -2,9 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Timeline from '../../components/Timeline';
-//import CardTeamMember from '../../components/CardTeamMember';
-import Chip from '../../components/Chip';
+import Timeline from '@/components/Timeline';
+import Chip from '@/components/Chip';
 import ServicePhoto from '../../../public/banner_service.jpg'
 import { User, Calendar, CheckCircle, Star } from 'lucide-react';
 import Avatar1 from '../../../public/avatar1.jpg';

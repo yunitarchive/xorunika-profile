@@ -1,0 +1,39 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Location A",
+          "ghi": 700 
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-100.0, 40.0]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Location B",
+          "ghi": 800
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-101.0, 41.0]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Location C",
+          "ghi": 600
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-99.0, 39.0]
+        }
+      }
+    ]
+  }
+  

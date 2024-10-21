@@ -2,6 +2,7 @@
 import React from 'react';
 //import Map from '../components/Map';
 import Banner from '../components/Banner';
+import ServicePage from './service/page';
 import ServicePhoto from '../../public/banner_service.jpg'
 const HomePage = () => {
   return (
@@ -17,6 +18,9 @@ const HomePage = () => {
         />
     
       </section>
+      <section className="relative min-h-screen">
+        <ServicePage isPage={false}/>
+        </section>
     </div>
   );
 };
