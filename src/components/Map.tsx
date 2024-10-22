@@ -1,5 +1,4 @@
-// src/components/MapComponent.tsx
-
+'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import OLMap from 'ol/Map';
 import View from 'ol/View';
@@ -41,11 +40,13 @@ const MapComponent: React.FC = () => {
     fetch('data.geojson') // Adjust the path according to your setup
       .then((response) => response.json() as Promise<GeoJSONFeatureCollection>)
       .then((geojson) => {
+        console.log("Fetched GeoJSON:", geojson); // Log fetched GeoJSON data
         // Convert GeoJSON features to an array of processed features
         const features = geojson.features.map((feature) => ({
           coordinates: feature.geometry.coordinates,
           ghi: feature.properties.ghi,
         }));
+        console.log("Processed Features:", features); // Log processed features
         setData(features);
       });
   }, []);
@@ -78,11 +79,10 @@ const MapComponent: React.FC = () => {
       data,
       getPosition: (d) => d.coordinates,
       getFillColor: (d) => {
-        // Ensure that color values are numbers and not strings
-        const normalizedGHI = Math.min(Math.max(d.ghi, 0), 200); // Ensure GHI is within a desired range
-        const red = (normalizedGHI / 200) * 255; // Normalize GHI to 0-255 range for red
-        const green = (200 - normalizedGHI) * (255 / 200); // Inverse relation for green
-        return [red, green, 0]; // RGB value
+        const normalizedGHI = Math.min(Math.max(d.ghi, 0), 200);
+        const red = (normalizedGHI / 200) * 255; 
+        const green = (200 - normalizedGHI) * (255 / 200);
+        return [red, green, 0]; 
       },
       getRadius: () => 100,
       radiusScale: 6,
@@ -90,6 +90,7 @@ const MapComponent: React.FC = () => {
     }),
   ];
 
+  // Render the component
   return (
     <div>
       <div
@@ -97,18 +98,20 @@ const MapComponent: React.FC = () => {
         style={{ width: '100%', height: '100vh' }} // Set desired size
       />
       {/* Add DeckGL overlay on top of OpenLayers */}
-      <DeckGL
-        layers={layers}
-        initialViewState={{
-          longitude: -100,
-          latitude: 40,
-          zoom: 4,
-          pitch: 0,
-          bearing: 0,
-        }}
-        controller={true}
-        style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%' }} // Layer styling
-      />
+      {data.length > 0 && ( // Render only if data is present
+        <DeckGL
+          layers={layers}
+          initialViewState={{
+            longitude: -100,
+            latitude: 40,
+            zoom: 4,
+            pitch: 0,
+            bearing: 0,
+          }}
+          controller={true}
+          style={{ position: 'absolute', top: '0', left: '0', width: '100%', height: '100%' }} // Layer styling
+        />
+      )}
     </div>
   );
 };
